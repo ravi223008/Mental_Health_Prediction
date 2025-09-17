@@ -1,0 +1,7 @@
+Input rows: 50000, Output rows: 50000
+Columns (full→numeric): 31 → 19
+Dropped constant/low-var cols: []
+Severity_ord NA in full: 0.500 (kept NA in analysis; imputed in numeric)
+Added Stress_Level_ord (0/1/2); NA rate: 0.000
+k-anonymity <5 groups (public view): 196 | LOW_FREQ merge threshold=20
+Privacy-safe outputs (RR3) written to: \reports\tables_public
