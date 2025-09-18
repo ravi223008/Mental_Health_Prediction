@@ -4,47 +4,47 @@ from sklearn.preprocessing import LabelEncoder
 import pandas as pd
 import numpy as np
 
-# ==== 读取与对齐 ====
-Xy = pd.read_csv("clean_numeric_model.csv")        # 含 User_ID 与目标列
-splits = pd.read_csv("splits_70_15_15_k5.csv")     # 含 row_id, split
+# ==== Read and align ====
+Xy = pd.read_csv("clean_numeric_model.csv")        # contains User_ID and target column
+splits = pd.read_csv("splits_70_15_15_k5.csv")     # contains row_id, split
 
-# 用 User_ID (左) ↔ row_id (右) 对齐
+# Align User_ID (left) with row_id (right)
 df = Xy.merge(splits[["row_id", "split"]], left_on="User_ID", right_on="row_id", how="inner")
 
-TARGET = "Severity_ord"   # 如果换成 severity_level，只需改这里
+TARGET = "Severity_ord"   # if you switch to severity_level, just change this
 
-# 目标编码（如非整数）
+# Encode target if it is not integer
 if df[TARGET].dtype.kind not in "iu":
     le = LabelEncoder()
     df[TARGET] = le.fit_transform(df[TARGET].astype(str))
     print("Encoded target classes:", dict(enumerate(le.classes_)))
 
-# ==== 特征与标签 ====
+# ==== Features and labels ====
 drop_cols = {TARGET, "split", "row_id", "User_ID"}
 feature_cols = [c for c in df.columns if c not in drop_cols]
 X = df[feature_cols]
 y = df[TARGET].astype(int)
 
-# 划分训练/测试
+# Split train/test
 X_train, y_train = X[df["split"] == "train"], y[df["split"] == "train"]
 X_test,  y_test  = X[df["split"] == "test"],  y[df["split"] == "test"]
 
 print(f"Shapes -> X_train: {X_train.shape}, X_test: {X_test.shape}")
 
-# ==== 模型（L2 多项逻辑回归 + class_weight） ====
+# ==== Model (L2 multinomial logistic regression + class_weight) ====
 clf = LogisticRegression(
     penalty="l2",
     solver="lbfgs",
     multi_class="multinomial",
     max_iter=1000,
     C=1.0,
-    class_weight="balanced",   # 关键参数
+    class_weight="balanced",   # key parameter to mitigate class imbalance
     n_jobs=-1,
     random_state=42
 )
 clf.fit(X_train, y_train)
 
-# ==== 预测与评估 ====
+# ==== Predict and evaluate ====
 y_pred = clf.predict(X_test)
 y_prob = clf.predict_proba(X_test)
 
