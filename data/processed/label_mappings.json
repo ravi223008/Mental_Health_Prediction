@@ -1,0 +1,30 @@
+{
+  "Gender_norm": {
+    "Female": 0,
+    "Male": 1,
+    "Other": 2,
+    "Unknown": 3
+  },
+  "Occupation": {
+    "Education": 0,
+    "Engineering": 1,
+    "Finance": 2,
+    "Healthcare": 3,
+    "IT": 4,
+    "Other": 5,
+    "Sales": 6
+  },
+  "Country": {
+    "Australia": 0,
+    "Canada": 1,
+    "Germany": 2,
+    "India": 3,
+    "Other": 4,
+    "UK": 5,
+    "USA": 6
+  },
+  "Mental_Health_Condition": {
+    "No": 0,
+    "Yes": 1
+  }
+}
