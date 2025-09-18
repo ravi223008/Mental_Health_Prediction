@@ -12,7 +12,7 @@ The `baseline_model` branch contains the following files, each corresponding to 
 - **`LogisticRegression_sample_weights.py`**  
   Loads `sample_weights.csv` and further amplifies minority class weights (AMP=4), combining fairness weights with imbalance adjustment.  
 
-- **`LogisticRegression-SMOTE.ipynb`**  
+- **`LogisticRegression-SMOTE.py`**  
   Applies **SMOTENC** oversampling on the training set to synthetically generate minority samples and balance class distribution.  
 
 ---
