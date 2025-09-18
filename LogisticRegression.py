@@ -6,9 +6,9 @@ import pandas as pd
 X = pd.read_csv("clean_numeric_model.csv")
 splits = pd.read_csv("splits_70_15_15_k5.csv")
 
-# 假设标签列叫 'Mental_Health_Condition'
-y = X['Mental_Health_Condition']
-X = X.drop(columns=['Mental_Health_Condition'])
+# 假设标签列叫 'Severity_ord'
+y = X['Severity_ord']
+X = X.drop(columns=['Severity_ord'])
 
 # 划分训练和测试
 train_idx = splits[splits['split']=="train"].index
