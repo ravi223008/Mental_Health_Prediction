@@ -1,0 +1,98 @@
+{
+  "features_path": "C:\\Users\\17507\\Desktop\\CS760\\760 - 副本\\760\\data\\processed\\clean_numeric_model.csv",
+  "feature_columns": [
+    "User_ID",
+    "Age",
+    "Sleep_Hours",
+    "Work_Hours",
+    "Physical_Activity_Hours",
+    "Social_Media_Usage",
+    "Consultation_History_bin",
+    "Medication_Usage_bin",
+    "Smoking_Habit_ord",
+    "Smoking_Habit_bin",
+    "Alcohol_Consumption_ord",
+    "Alcohol_Consumption_bin",
+    "Diet_Quality_ord",
+    "Severity_ord",
+    "Stress_Level_ord",
+    "Occupation_lbl",
+    "Country_lbl",
+    "Mental_Health_Condition_lbl",
+    "Age_isna",
+    "Sleep_Hours_isna",
+    "Work_Hours_isna",
+    "Physical_Activity_Hours_isna",
+    "Social_Media_Usage_isna"
+  ],
+  "categorical_indices": [
+    6,
+    7,
+    9,
+    11,
+    15,
+    16,
+    17
+  ],
+  "numeric_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    8,
+    10,
+    12,
+    13,
+    14,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "target_name": "Mental_Health_Condition",
+  "train_stats": {
+    "n_pos": 17497,
+    "n_neg": 17502,
+    "minority_ratio": 0.9997
+  },
+  "cv_folds": {
+    "k": 5,
+    "train_fold_counts": [
+      {
+        "fold": 0,
+        "n_pos": 3500,
+        "n_neg": 3501
+      },
+      {
+        "fold": 1,
+        "n_pos": 3500,
+        "n_neg": 3501
+      },
+      {
+        "fold": 2,
+        "n_pos": 3499,
+        "n_neg": 3500
+      },
+      {
+        "fold": 3,
+        "n_pos": 3499,
+        "n_neg": 3500
+      },
+      {
+        "fold": 4,
+        "n_pos": 3499,
+        "n_neg": 3500
+      }
+    ]
+  },
+  "recommended": {
+    "sampler": "SMOTENC",
+    "sampling_strategy": "auto",
+    "k_neighbors": 5,
+    "random_state": 760
+  },
+  "notes": "Apply SMOTENC inside each training fold only; never touch val/test."
+}
