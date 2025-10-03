@@ -1,6 +1,0 @@
-Feature table: clean_numeric_model.csv
-Categorical idx (7): [6, 7, 9, 11, 15, 16, 17]
-Numeric idx     (16): [0, 1, 2, 3, 4, 5, 8, 10, 12, 13, 14, 18, 19, 20, 21, 22]
-Train pos/neg: 17497/17502 (minority_ratio=1.000)
-Recommended: sampler=SMOTENC, strategy=auto, k_neighbors=5, random_state=760
-Train folds: fold=0, pos=3500, neg=3501; fold=1, pos=3500, neg=3501; fold=2, pos=3499, neg=3500; fold=3, pos=3499, neg=3500; fold=4, pos=3499, neg=3500
