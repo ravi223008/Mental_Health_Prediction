@@ -15,7 +15,7 @@ df = pd.read_csv("clean_numeric_model.csv")
 
 # Remove irrelevant / constant columns
 drop_cols = [
-    "User_ID",
+    "User_ID", "Mental_Health_Condition_lbl",
     "Age_isna", "Sleep_Hours_isna", "Work_Hours_isna",
     "Physical_Activity_Hours_isna", "Social_Media_Usage_isna"
 ]
