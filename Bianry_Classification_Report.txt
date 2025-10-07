@@ -40,3 +40,18 @@ Classification Report:
 weighted avg      0.508     0.508     0.508      7502
 
 ROC-AUC (Test): 0.509
+
+**XGBoost:**
+
+=== XGBoost - Test ===
+Classification Report:
+               precision    recall  f1-score   support
+
+           0      0.504     0.480     0.492      3751
+           1      0.504     0.528     0.516      3751
+
+    accuracy                          0.504      7502
+   macro avg      0.504     0.504     0.504      7502
+weighted avg      0.504     0.504     0.504      7502
+
+ROC-AUC (Test): 0.500
