@@ -1,0 +1,42 @@
+**Simple Linear Model (Logistic):**
+
+Classification Report (Test Set):
+              precision    recall  f1-score   support
+
+           0      0.492     0.489     0.490      3751
+           1      0.492     0.495     0.494      3751
+
+    accuracy                          0.492      7502
+   macro avg      0.492     0.492     0.492      7502
+weighted avg      0.492     0.492     0.492      7502
+
+ROC-AUC: 0.487
+
+**Polynomial Features:**
+
+ROC-AUC: 0.49442064716271167
+              precision    recall  f1-score   support
+
+           0       0.50      0.50      0.50      3751
+           1       0.50      0.50      0.50      3751
+
+    accuracy                           0.50      7502
+   macro avg       0.50      0.50      0.50      7502
+weighted avg       0.50      0.50      0.50      7502
+
+**RBF SVC:**
+
+[VAL-FAST] Best (subsample) -> k=12, C=4, gamma=scale | val AUC=0.508
+
+=== SVM (RBF, fast-tuned) - Test ===
+Classification Report:
+               precision    recall  f1-score   support
+
+           0      0.508     0.492     0.500      3751
+           1      0.508     0.524     0.516      3751
+
+    accuracy                          0.508      7502
+   macro avg      0.508     0.508     0.508      7502
+weighted avg      0.508     0.508     0.508      7502
+
+ROC-AUC (Test): 0.509
