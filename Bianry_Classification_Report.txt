@@ -72,3 +72,31 @@ Classification Report:
 weighted avg      0.504     0.504     0.504      7502
 
 ROC-AUC (Test): 0.500
+
+**T-test**:
+
+=== Group Mean/Std by Target ===
+                     Sleep_Hours           Work_Hours             \
+                            mean       std       mean        std   
+Has_MH_condition_bin                                               
+0                       7.010731  1.726674  55.067272  14.679128   
+1                       7.009137  1.738689  55.058447  14.704307   
+
+                     Social_Media_Usage           Physical_Activity_Hours  \
+                                   mean       std                    mean   
+Has_MH_condition_bin                                                        
+0                              3.243579  1.579143                4.963724   
+1                              3.242741  1.591338                5.000360   
+
+                                      Age             
+                           std       mean        std  
+Has_MH_condition_bin                                  
+0                     3.166500  41.551534  13.859888  
+1                     3.156966  41.394607  13.828293  
+
+=== T-tests (0 vs 1) ===
+Sleep_Hours               | p=9.1810e-01
+Work_Hours                | p=9.4646e-01
+Social_Media_Usage        | p=9.5289e-01
+Physical_Activity_Hours   | p=1.9516e-01
+Age                       | p=2.0505e-01
