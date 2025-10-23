@@ -21,7 +21,7 @@ The goal of this stage is to test whether simple demographic and lifestyle featu
 
 - **Data:** Cross-sectional survey data with ~50,000 rows and lifestyle features (sleep hours, work hours, physical activity, social media use, age, etc.).
 - **Task:** Binary classification — predict whether an individual reported any mental-health condition (`Has_MH_condition_bin ∈ {0,1}`).
-- **Split:** Stratified 75/15/15 (train/val/test).
+- **Split:** Stratified 70/15/15 (train/val/test).
 - **Evaluation Metrics:** Accuracy, Macro-F1, ROC-AUC (on test set).
 - **Note:** All pipelines are leakage-free. No feature transformations were fit on validation/test data.
 
