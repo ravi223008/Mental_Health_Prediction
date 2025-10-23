@@ -26,7 +26,7 @@
 
 > If the file name or location differs, pass it explicitly via CLI (see **Run it**).
 
-### Pipeline stages (high level)
+### Pipeline stages 
 1. **Column normalization**  
    Harmonize column names and standardize common boolean/category variants (`Yes/No`, `Y/N`, `1/0`).
 
@@ -37,7 +37,7 @@
    - `bin` — binary indicators (0/1)  
    - `lbl` — label columns (see next step)
 
-3. **Label standardization (single source of truth)**  
+3. **Label standardization **  
    - Consolidate any historical/derived encodings into a single label `y`.  
    - Maintain a **versioned mapping** `M(Risk_lbl) → {0,1,2}` (e.g., {low, medium, high}).  
    - Treat legacy fields (e.g., `*_bin`, `*_code`) as **deterministic derivations** of `y`; exclude them from training features by default to prevent “multiple truths”.  
@@ -48,7 +48,7 @@
    - `ord/bin`: merge rare levels; use explicit `Unknown/None` fallback.  
    - Log per-column missingness and chosen strategies.
 
-5. **Stratified split (leak-free)**  
+5. **Stratified split **  
    - Default `train/val/test = 70/15/15` with fixed seed; stratified by `y`.  
    - **Fit** encoders/imputers/scalers on **train only**; **transform** val/test.  
    - Emit a **k-fold plan** for CV inside the training set.
@@ -57,7 +57,7 @@
    - **No SMOTE/oversampling** here (avoid contaminating val/test).  
    - Export class distribution and suggested configs for use **inside** training folds later.
 
-7. **(Optional) Fairness guardrails**  
+7. ** Fairness guardrails**  
    - Summaries by protected attributes (if available) and simple slices to inform later threshold alignment or re-weighting during modeling.
 
 ### Outputs (`data/processed/`)
